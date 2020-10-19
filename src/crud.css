@@ -1,0 +1,26 @@
+html, body {
+    margin: 0px !important;
+    padding: 0px !important;
+    background: #6C7A89 !important;
+}
+
+.container {
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.container2 {
+    background: rgb(245, 222, 222) !important;
+
+}
+.box {
+    width: 300px !important;
+    height: 500px !important;
+    background: rgb(245, 222, 222) !important;
+}
+body {
+    margin: 0px !important;
+}
