@@ -15,49 +15,52 @@
             shrink-to-fit=no">
         <title>Crud</title>
     </head>
-    <body style="background: rgb(141, 240, 243)">
+    <body style="background: rgb(193, 243, 245)">
 
 
         <div class="mx-auto" style="width: 300px;">
-            <div class="mx-auto" style="background: rgb(245, 222, 222); width: 300px; height: 300px; margin-top: 100px;" id="app">
+            <div class="mx-auto" style="background: rgb(112, 139, 117); width: 300px; height: 300px; margin-top: 100px;" id="app">
                 <div class="mt-5">
                     <h4 class="ml-5">Agenda de Eventos</h4>
                     <input placeholder="Titulo" class="ml-5 form-control"
                         style="width: 200px;"
-                        v-model="title">
+                        v-model="title" required>
                     <p></p>
                     <input placeholder="Descrição do Evento" class="ml-5
                         form-control" style="width: 200px;
                         height: 100px;"
-                        v-model="desc">
+                        v-model="desc" required>
                     <p></p>
                     <input placeholder="Data" class="ml-5 form-control"
-                        style="width: 200px;" v-model="date">
+                        style="width: 200px;" v-model="date" id="date" type="date">
                     <span class="e-input-group-icon e-input-calendar"></span>
+                    <p></p>
                     <button v-on:click="salvar()"
-                        class="ml-5 btn btn-secondary" style="width:
+                        class="btn btn-success container" style="width:
                         70px; height: 35px;
                         margin-top: 0.5%;">Salvar</button>
                        <p></p>
-                    <ul v-for="(item, index) in agenda" id="app" class="mx-auto, text-overflow: clip ellipsis" style="background: rgb(245, 222, 222); width: 300px; height: 200px; margin-top: 50px;">
-                        <div class="container2">
-                            <li 
-                                :key="index">
-                                <span>Titulo:</span>{{ item.title }}
-                                <p></p>
-                                <span>Descricao:</span>{{ item.desc }}
-                                <p></p>
-                                <span>Data:</span>{{ item.date }}
-                                <p></p>
-                                <button v-on:click="apagar(item)"
-                                    class="ml-6 btn btn-secondary" style="width:
-                                    30px; height: 35px;
-                                    margin-top: 0.5%;">Apagar</button>
-                                <button v-on:click="editar(item)"
-                                    class="ml-6 btn btn-secondary" style="width:
-                                    30px; height: 35px;
-                                    margin-top: 0.5%;">Editar</button>
+                    <ul v-for="(item, index) in agenda" :key="index" id="app" class="mx-auto, text-overflow: clip ellipsis" style="background:rgb(112, 139, 117); margin-top: 50px; height: 170px; width: 300px;">
+                        <div>
+                            <br>
+                            <li >
+                                <span>Titulo: </span>{{ item.title }}
                             </li>
+                            <li>
+                                <span>Descricao: </span>{{ item.desc }}
+                            </li>
+                            <li>
+                                <span>Data: </span>{{ item.date }}
+                            </li>  
+                            <br>  
+                                <button v-on:click="apagar(item)"
+                                    class="ml-1 btn btn-danger" style="width:
+                                    30px; height: 35px;
+                                    margin-top: 0.5%; margin-left: 10px;">Apagar</button>
+                                <button v-on:click="editar(item)"
+                                    class="ml-2 btn btn-info" style="width:
+                                    30px; height: 35px; margin-right: 10px;
+                                    margin-top: 0.5%;">Editar</button>
                         </div>
                     </ul>
                 </div>
