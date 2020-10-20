@@ -14,54 +14,63 @@
         <meta name="viewport" content="width=device-width, initial-scale=1,
             shrink-to-fit=no">
         <title>Crud</title>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand">
+            </a>
+          </nav>
     </head>
-    <body style="background: rgb(193, 243, 245)">
-
-
-        <div class="mx-auto" style="width: 300px;">
-            <div class="mx-auto" style="background: rgb(112, 139, 117); width: 300px; height: 300px; margin-top: 100px;" id="app">
-                <div class="mt-5">
-                    <h4 class="ml-5">Agenda de Eventos</h4>
-                    <input placeholder="Titulo" class="ml-5 form-control"
-                        style="width: 200px;"
-                        v-model="title" required>
+    <body style="background: rgb(74, 135, 136);">
+        <div class="container">
+            <div id="app" class="row row-cols-2">
+                <div class="col-6" style="width: 300px; height: 320px; background: rgba(65, 61, 61, 0.247) !important;">
+                    <h4 style="padding-left: 165px;">Agenda de Eventos</h4>
                     <p></p>
-                    <input placeholder="Descrição do Evento" class="ml-5
-                        form-control" style="width: 200px;
+                    <input placeholder="Titulo" class="form-control mx-auto"
+                        style="width: 210px;"
+                        v-model="title">
+                        <p></p>
+                    <input placeholder="Descrição do Evento"
+                        class="form-control mx-auto" style="width: 210px;
                         height: 100px;"
-                        v-model="desc" required>
-                    <p></p>
-                    <input placeholder="Data" class="ml-5 form-control"
-                        style="width: 200px;" v-model="date" id="date" type="date">
-                    <span class="e-input-group-icon e-input-calendar"></span>
+                        v-model="desc">
+                        <p></p>
+                    <input placeholder="Data" class="form-control mx-auto"
+                        style="width: 210px;" v-model="date" id="date"
+                        type="date">
                     <p></p>
                     <button v-on:click="salvar()"
                         class="btn btn-success container" style="width:
                         70px; height: 35px;
                         margin-top: 0.5%;">Salvar</button>
-                       <p></p>
-                    <ul v-for="(item, index) in agenda" :key="index" id="app" class="mx-auto, text-overflow: clip ellipsis" style="background:rgb(112, 139, 117); margin-top: 50px; height: 170px; width: 300px;">
-                        <div>
-                            <br>
-                            <li >
-                                <span>Titulo: </span>{{ item.title }}
-                            </li>
-                            <li>
-                                <span>Descricao: </span>{{ item.desc }}
-                            </li>
-                            <li>
-                                <span>Data: </span>{{ item.date }}
-                            </li>  
-                            <br>  
-                                <button v-on:click="apagar(item)"
-                                    class="ml-1 btn btn-danger" style="width:
-                                    30px; height: 35px;
-                                    margin-top: 0.5%; margin-left: 10px;">Apagar</button>
-                                <button v-on:click="editar(item)"
-                                    class="ml-2 btn btn-info" style="width:
-                                    30px; height: 35px; margin-right: 10px;
-                                    margin-top: 0.5%;">Editar</button>
-                        </div>
+                </div>
+                <div class="col-6" style="background: rgb(74, 135, 136); width: 200px;">
+                    <ul v-for="(item, index) in agenda" :key="index"
+                        class="mx-auto text-overflow: clip
+                        ellipsis form-control-ms"
+                        style="background:rgb(135, 192, 145);
+                        margin-top:
+                        50px;
+                        height: 170px; width: 300px;">
+                        <br>
+                        <li>
+                            <span>Titulo: </span>{{ item.title }}
+                        </li>
+                        <li>
+                            <span>Descricao: </span>{{ item.desc }}
+                        </li>
+                        <li>
+                            <span>Data: </span>{{ item.date }}
+                        </li>
+                        <br>
+                        <button v-on:click="apagar(item)"
+                            class="ml-1 btn btn-danger"
+                            style="width:
+                            30px; height: 35px;
+                            margin-top: 0.5%; margin-left: 10px;">Apagar</button>
+                        <button v-on:click="editar(item)"
+                            class="ml-2 btn btn-info" style="width:
+                            30px; height: 35px; margin-right: 10px;
+                            margin-top: 0.5%;">Editar</button>
                     </ul>
                 </div>
             </div>
