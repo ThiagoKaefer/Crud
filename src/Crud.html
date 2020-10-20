@@ -17,23 +17,24 @@
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand">
             </a>
-          </nav>
+        </nav>
     </head>
     <body style="background: rgb(74, 135, 136);">
         <div class="container">
             <div id="app" class="row row-cols-2">
-                <div class="col-6" style="width: 300px; height: 320px; background: rgba(65, 61, 61, 0.247) !important;">
+                <div class="col-6" style="width: 300px; height: 320px;
+                    background: rgba(65, 61, 61, 0.247) !important;">
                     <h4 style="padding-left: 165px;">Agenda de Eventos</h4>
                     <p></p>
                     <input placeholder="Titulo" class="form-control mx-auto"
                         style="width: 210px;"
-                        v-model="title">
-                        <p></p>
+                        v-model="title" name="ititle">
+                    <p></p>
                     <input placeholder="Descrição do Evento"
                         class="form-control mx-auto" style="width: 210px;
                         height: 100px;"
                         v-model="desc">
-                        <p></p>
+                    <p></p>
                     <input placeholder="Data" class="form-control mx-auto"
                         style="width: 210px;" v-model="date" id="date"
                         type="date">
@@ -43,7 +44,8 @@
                         70px; height: 35px;
                         margin-top: 0.5%;">Salvar</button>
                 </div>
-                <div class="col-6" style="background: rgb(74, 135, 136); width: 200px;">
+                <div class="col-6" style="background: rgb(74, 135, 136); width:
+                    200px;">
                     <ul v-for="(item, index) in agenda" :key="index"
                         class="mx-auto text-overflow: clip
                         ellipsis form-control-ms"
